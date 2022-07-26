@@ -17,8 +17,8 @@ import java.util.TimerTask;
 import android.widget.Toast;
 import android.util.Log;
 import com.slipkprojects.sockshttp.adapter.LogsAdapter;
-import com.slipkprojects.ultrasshservice.logger.SkStatus;
-import com.slipkprojects.ultrasshservice.config.Settings;
+import com.slipkprojects.sockshttp.logger.SkStatus;
+import com.slipkprojects.sockshttp.config.Settings;
 
 /**
 * @author Skank3r

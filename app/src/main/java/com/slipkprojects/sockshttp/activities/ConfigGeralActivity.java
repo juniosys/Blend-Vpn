@@ -30,7 +30,7 @@ import android.widget.SimpleAdapter;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.FragmentManager;
 import com.slipkprojects.sockshttp.preference.SettingsPreference;
-import com.slipkprojects.ultrasshservice.util.SkProtect;
+import com.slipkprojects.sockshttp.util.SkProtect;
 import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.PreferenceFragmentCompat;
 import android.support.v7.preference.Preference;

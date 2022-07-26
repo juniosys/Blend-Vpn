@@ -15,7 +15,7 @@ import android.view.WindowManager;
 import android.content.Intent;
 import android.support.v4.content.LocalBroadcastManager;
 import android.os.Build;
-import com.slipkprojects.ultrasshservice.SocksHttpService;
+import com.slipkprojects.sockshttp.SocksHttpService;
 
 public class Utils
 {

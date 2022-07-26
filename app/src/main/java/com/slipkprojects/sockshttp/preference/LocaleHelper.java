@@ -10,7 +10,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.util.Locale;
 import android.support.annotation.StringDef;
-import com.slipkprojects.ultrasshservice.config.Settings;
+import com.slipkprojects.sockshttp.config.Settings;
 
 
 public class LocaleHelper {

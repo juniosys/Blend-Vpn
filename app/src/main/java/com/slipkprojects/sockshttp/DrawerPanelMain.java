@@ -18,7 +18,7 @@ import android.os.Build;
 import android.content.Intent;
 import android.net.Uri;
 import com.slipkprojects.sockshttp.util.GoogleFeedbackUtils;
-import com.slipkprojects.ultrasshservice.logger.SkStatus;
+import com.slipkprojects.sockshttp.logger.SkStatus;
 import android.support.v4.view.GravityCompat;
 import com.slipkprojects.sockshttp.activities.ConfigGeralActivity;
 import com.slipkprojects.sockshttp.activities.AboutActivity;

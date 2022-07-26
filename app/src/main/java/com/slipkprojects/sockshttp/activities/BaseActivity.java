@@ -3,7 +3,7 @@ package com.slipkprojects.sockshttp.activities;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import com.slipkprojects.sockshttp.preference.SettingsPreference;
-import com.slipkprojects.ultrasshservice.config.Settings;
+import com.slipkprojects.sockshttp.config.Settings;
 import android.support.v7.app.AppCompatDelegate;
 import android.content.Context;
 import com.slipkprojects.sockshttp.preference.LocaleHelper;

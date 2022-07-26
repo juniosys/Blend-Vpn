@@ -31,6 +31,9 @@ dependencies {
 	implementation 'com.android.support.constraint:constraint-layout:1.0.2'
 	implementation 'com.google.android.gms:play-services-ads-lite:11.8.0'
 	
-	implementation project(':service')
-	implementation project(':style')
+    implementation 'net.i2p.crypto:eddsa:0.3.0'
+	implementation 'org.connectbot.jbcrypt:jbcrypt:1.0.0'
+	
+	// root detect
+	implementation 'com.github.kimchangyoun:rootbeerFresh:+'
 }

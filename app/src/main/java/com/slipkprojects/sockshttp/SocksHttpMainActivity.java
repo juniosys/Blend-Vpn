@@ -39,8 +39,8 @@ import android.content.pm.PackageManager;
 import android.text.Html;
 import android.support.v7.app.AlertDialog;
 import android.content.pm.PackageInfo;
-import com.slipkprojects.ultrasshservice.util.SkProtect;
-import com.slipkprojects.ultrasshservice.logger.SkStatus;
+import com.slipkprojects.sockshttp.util.SkProtect;
+import com.slipkprojects.sockshttp.logger.SkStatus;
 import android.content.ServiceConnection;
 import android.content.ComponentName;
 import android.os.IBinder;
@@ -51,24 +51,24 @@ import android.os.Build;
 import android.net.VpnService;
 import android.content.ActivityNotFoundException;
 import android.app.Activity;
-import com.slipkprojects.ultrasshservice.logger.ConnectionStatus;
+import com.slipkprojects.sockshttp.logger.ConnectionStatus;
 import android.os.Handler;
 import android.support.v4.content.ContextCompat;
 import com.slipkprojects.sockshttp.fragments.ClearConfigDialogFragment;
 import com.slipkprojects.sockshttp.activities.ConfigExportFileActivity;
 import com.slipkprojects.sockshttp.activities.ConfigImportFileActivity;
-import com.slipkprojects.ultrasshservice.config.Settings;
+import com.slipkprojects.sockshttp.config.Settings;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.os.PersistableBundle;
 import android.content.res.Configuration;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.AppCompatRadioButton;
 import android.widget.RadioGroup;
-import com.slipkprojects.ultrasshservice.config.ConfigParser;
+import com.slipkprojects.sockshttp.config.ConfigParser;
 import android.support.v4.app.ActivityCompat;
 import android.content.DialogInterface;
-import com.slipkprojects.ultrasshservice.tunnel.TunnelManagerHelper;
-import com.slipkprojects.ultrasshservice.LaunchVpn;
+import com.slipkprojects.sockshttp.tunnel.TunnelManagerHelper;
+import com.slipkprojects.sockshttp.LaunchVpn;
 import com.slipkprojects.sockshttp.activities.AboutActivity;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -86,7 +86,7 @@ import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdListener;
 import com.slipkprojects.sockshttp.activities.BaseActivity;
-import com.slipkprojects.ultrasshservice.tunnel.TunnelUtils;
+import com.slipkprojects.sockshttp.tunnel.TunnelUtils;
 import android.text.TextUtils;
 import com.slipkprojects.sockshttp.preference.LocaleHelper;
 import android.support.annotation.Nullable;
@@ -396,7 +396,7 @@ public class SocksHttpMainActivity extends BaseActivity
 			}
 		});
 
-		//Sistema de usuario e senha na tela inicial by @JefersonBR
+		//Sistema de usuario e senha na tela inicial
 		final SharedPreferences prefsTxt = mConfig.getPrefsPrivate();
 		inputPwUser.setText(prefsTxt.getString(Settings.USUARIO_KEY, ""));
 		inputPwPass.setText(prefsTxt.getString(Settings.SENHA_KEY, ""));

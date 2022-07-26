@@ -1,7 +1,7 @@
 package com.slipkprojects.sockshttp.adapter;
 
-import com.slipkprojects.ultrasshservice.logger.SkStatus;
-import com.slipkprojects.ultrasshservice.logger.LogItem;
+import com.slipkprojects.sockshttp.logger.SkStatus;
+import com.slipkprojects.sockshttp.logger.LogItem;
 import java.util.Collections;
 import android.widget.TextView;
 import android.content.Context;
@@ -23,7 +23,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
 import com.slipkprojects.sockshttp.R;
 import android.text.Html;
-import com.slipkprojects.ultrasshservice.config.Settings;
+import com.slipkprojects.sockshttp.config.Settings;
 import android.view.MotionEvent;
 
 public class LogsAdapter extends RecyclerView.Adapter<LogsAdapter.logViewHolder>

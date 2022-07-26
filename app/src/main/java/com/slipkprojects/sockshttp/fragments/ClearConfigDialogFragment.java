@@ -9,9 +9,9 @@ import android.widget.Toast;
 import android.support.v4.app.DialogFragment;
 import android.content.Intent;
 import android.support.v4.content.LocalBroadcastManager;
-import com.slipkprojects.ultrasshservice.logger.SkStatus;
+import com.slipkprojects.sockshttp.logger.SkStatus;
 import com.slipkprojects.sockshttp.SocksHttpMainActivity;
-import com.slipkprojects.ultrasshservice.config.Settings;
+import com.slipkprojects.sockshttp.config.Settings;
 import com.slipkprojects.sockshttp.preference.SettingsSSHPreference;
 
 public class ClearConfigDialogFragment extends DialogFragment {

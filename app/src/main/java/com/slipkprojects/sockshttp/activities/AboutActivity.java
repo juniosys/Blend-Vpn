@@ -14,7 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import com.google.android.gms.ads.AdView;
-import com.slipkprojects.ultrasshservice.tunnel.TunnelUtils;
+import com.slipkprojects.sockshttp.tunnel.TunnelUtils;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.slipkprojects.sockshttp.SocksHttpApp;
