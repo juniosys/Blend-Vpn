@@ -322,8 +322,8 @@ public class TunnelManagerThread
 
 			// proxy
 			addProxy(prefs.getBoolean(Settings.CONFIG_PROTEGER_KEY, false), prefs.getInt(Settings.TUNNELTYPE_KEY, Settings.bTUNNEL_TYPE_SSH_DIRECT),
-				(!prefs.getBoolean(Settings.PROXY_USAR_DEFAULT_PAYLOAD, true) ? mConfig.getPrivString(Settings.CUSTOM_PAYLOAD_KEY) : null),
-					mConnection);
+                     (!prefs.getBoolean(Settings.PROXY_USAR_DEFAULT_PAYLOAD, true) ? mConfig.getPrivString(Settings.CUSTOM_PAYLOAD_KEY) : null),  mConfig.getPrivString(Settings.CUSTOM_SNI),
+                     mConnection);
 
 			// monitora a conexão
 			mConnection.addConnectionMonitor(this);
@@ -485,8 +485,8 @@ public class TunnelManagerThread
 
 	private boolean useProxy = false;
 
-	protected void addProxy(boolean isProteger, int mTunnelType, String mCustomPayload, Connection conn) throws Exception {
-
+	protected void addProxy(boolean isProteger, int mTunnelType, String mCustomPayload, String mCustomSNI, Connection conn) throws Exception {
+    
 		if (mTunnelType != 0) {
 			useProxy = true;
 
@@ -536,6 +536,25 @@ public class TunnelManagerThread
 						throw new Exception(mContext.getString(R.string.error_proxy_invalid));
 					}
 				break;
+                
+                case Settings.bTUNNEL_TYPE_SSH_SSL:
+                    String customSNI = mCustomSNI;
+                    if (customSNI != null && customSNI.isEmpty()) {
+                        customPayload = null;
+                    }
+
+                    String sshServer = mConfig.getPrivString(Settings.SERVIDOR_KEY);
+                    int sshPort = Integer.parseInt(mConfig.getPrivString(Settings.SERVIDOR_PORTA_KEY));
+
+                    try {
+
+                        ProxyData sslTypeData = new SSLTunnel(sshServer, sshPort, customSNI);
+                        conn.setProxyData(sslTypeData);
+
+                    }catch(Exception e) {
+                        SkStatus.logInfo(e.getMessage());
+                    }
+					break;
 
 					/*case Prefs.TUNNEL_TYPE_SSH_HTTP:
 					 SkStatus.logInfo("Usando Tunnel HTTP");

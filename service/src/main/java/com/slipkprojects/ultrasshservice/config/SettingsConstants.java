@@ -19,6 +19,7 @@ public interface SettingsConstants {
     PROXY_IP_KEY = "proxyRemoto",
     PROXY_PORTA_KEY = "proxyRemotoPorta",
     CUSTOM_PAYLOAD_KEY = "proxyPayload",
+    CUSTOM_SNI = "sslSNI",
     PROXY_USAR_DEFAULT_PAYLOAD = "usarDefaultPayload",
     PROXY_USAR_AUTENTICACAO_KEY = "usarProxyAutenticacao",
     CONFIG_PROTEGER_KEY = "protegerConfig",
@@ -57,5 +58,6 @@ public interface SettingsConstants {
 
 	public static final int
     bTUNNEL_TYPE_SSH_DIRECT = 1,
-    bTUNNEL_TYPE_SSH_PROXY = 2;
+    bTUNNEL_TYPE_SSH_PROXY = 2,
+    bTUNNEL_TYPE_SSH_SSL = 3;
 }
