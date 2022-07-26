@@ -16,7 +16,7 @@ import javax.net.ssl.HandshakeCompletedListener;
 import javax.net.ssl.HandshakeCompletedEvent;
 import java.util.Arrays;
 
-public class SSLTunnelProxy implements ProxyData
+public class SSLTunnel implements ProxyData
 {
 	class HandshakeTunnelCompletedListener implements HandshakeCompletedListener {
         private final String val$host;
@@ -48,7 +48,7 @@ public class SSLTunnelProxy implements ProxyData
 	
 	private Socket mSocket;
 	
-	public SSLTunnelProxy(String server, int port, String hostSni) {
+	public SSLTunnel(String server, int port, String hostSni) {
 		this.stunnelServer = server;
 		this.stunnelPort = port;
 		this.stunnelHostSNI = hostSni;
