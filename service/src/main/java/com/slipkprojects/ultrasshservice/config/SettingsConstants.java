@@ -53,11 +53,13 @@ public interface SettingsConstants {
     TUNNELTYPE_KEY = "tunnelType",
     TUNNEL_TYPE_SSH_DIRECT = "sshDirect",
     TUNNEL_TYPE_SSH_PROXY = "sshProxy",
-    TUNNEL_TYPE_SSH_SSL = "sshSsl";
+    TUNNEL_TYPE_SSH_SSL = "sshSsl",
+    TUNNEL_TYPE_SSH_SSL_PAY = "sshSslPay";
 	;
 
 	public static final int
     bTUNNEL_TYPE_SSH_DIRECT = 1,
     bTUNNEL_TYPE_SSH_PROXY = 2,
-    bTUNNEL_TYPE_SSH_SSL = 3;
+    bTUNNEL_TYPE_SSH_SSL = 3,
+    bTUNNEL_TYPE_SSH_SSL_PAY = 4;
 }

@@ -555,6 +555,38 @@ public class TunnelManagerThread
                         SkStatus.logInfo(e.getMessage());
                     }
 					break;
+                    
+                case Settings.bTUNNEL_TYPE_SSH_SSL_PAY:
+
+                    String customSNI2 = mCustomSNI;
+                    if (customSNI2 != null && customSNI2.isEmpty()) {
+                        customSNI2 = null;
+                    }
+                    String customPayload2 = mCustomPayload;
+
+
+                    if (customPayload2 != null && customPayload2.isEmpty()) {
+                        customPayload2= null;
+                    }
+
+
+                    String sshServer2 = mConfig.getPrivString(Settings.SERVIDOR_KEY);
+                    int sshPort2 = Integer.parseInt(mConfig.getPrivString(Settings.SERVIDOR_PORTA_KEY));
+
+
+                    try{
+
+
+                        SSLPayTunnel sslTun = new SSLPayTunnel(sshServer2, sshPort2, customSNI2,customPayload2);
+                        conn.setProxyData(sslTun);
+
+
+                    } catch(Exception e) {
+                        SkStatus.logInfo(e.getMessage());
+                    }
+
+
+					break;
 
 					/*case Prefs.TUNNEL_TYPE_SSH_HTTP:
 					 SkStatus.logInfo("Usando Tunnel HTTP");
