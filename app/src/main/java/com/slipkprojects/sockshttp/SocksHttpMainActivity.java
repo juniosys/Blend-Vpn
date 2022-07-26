@@ -283,9 +283,12 @@ public class SocksHttpMainActivity extends BaseActivity
 
 		// Aqui sao os nomes que vcs quiserem pro servidor, pode ser oq vc quiser(nao importa)
 		List<String> ListaServidores = new ArrayList<String>();
-		ListaServidores.add("Server 01");
-		ListaServidores.add("Server 02");
-
+		ListaServidores.add("VIVO 1");
+		ListaServidores.add("VIVO 2 SSLPAY");
+        ListaServidores.add("CLARO 1 SSL");
+		ListaServidores.add("CLARO 2 SSLPAY");
+        ListaServidores.add("CLARO 3 SSLPAY");
+        
 		// Criando adaptador para receber os servidores
 		ArrayAdapter<String> AdptadorServidores = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, ListaServidores);
 
@@ -317,31 +320,67 @@ public class SocksHttpMainActivity extends BaseActivity
 					//Define as configurações do servidor de acordo com o servidor selecionado
                     if(position == 0) {
                     	//Informações SSH
-						sPrefs.edit().putString(Settings.SERVIDOR_KEY, "IPSERVIDOR 01").apply();
-						sPrefs.edit().putString(Settings.SERVIDOR_PORTA_KEY, "PORTASERVIDOR 01").apply();
+						sPrefs.edit().putString(Settings.SERVIDOR_KEY, "104.18.6.80").apply();
+						sPrefs.edit().putString(Settings.SERVIDOR_PORTA_KEY, "80").apply();
 
 						//Payload
-						sPrefs.edit().putString(Settings.CUSTOM_PAYLOAD_KEY, "SUAPAYLOAD AQUI 01").apply();
+						sPrefs.edit().putString(Settings.CUSTOM_PAYLOAD_KEY, "GET / HTTP/1.1[crlf]Host: br.mixvpn.tk[crlf]Upgrade: Websocket[crlf]Connection: Keep-Alive[crlf][crlf]").apply();
 
 						//Servidor 01 Modo proxy (exemplo)
-						sPrefs.edit().putInt(Settings.TUNNELTYPE_KEY, Settings.bTUNNEL_TYPE_SSH_PROXY).apply();
-
-						//Informações Proxy
-						sPrefs.edit().putString(Settings.PROXY_IP_KEY, "PROXY IP").apply();
-						sPrefs.edit().putString(Settings.PROXY_PORTA_KEY, "PROXY PORTA").apply();
-
-					}else if(position == 1){
-						//Informações SSH   SERVIDOR 2
-						sPrefs.edit().putString(Settings.SERVIDOR_KEY, "IP SERVIDOR 02").apply();
-						sPrefs.edit().putString(Settings.PROXY_PORTA_KEY, "PORTA SERVIDOR 02").apply();
-
-						//Payload
-						sPrefs.edit().putString(Settings.CUSTOM_PAYLOAD_KEY, "PAYLOAD SERVIDOR 02").apply();
-
-						//Servidor 02 Modo direct (exemplo)
 						sPrefs.edit().putInt(Settings.TUNNELTYPE_KEY, Settings.bTUNNEL_TYPE_SSH_DIRECT).apply();
 
-						//como é direct não precisa de informações do proxy
+						//Informações Proxy
+						//sPrefs.edit().putString(Settings.PROXY_IP_KEY, "PROXY IP").apply();
+						//sPrefs.edit().putString(Settings.PROXY_PORTA_KEY, "PROXY PORTA").apply();
+                        ////==========================================================================================////
+					}else if(position == 1){
+						//Informações SSH   SERVIDOR 2
+						sPrefs.edit().putString(Settings.SERVIDOR_KEY, "snow.vivo.com.br").apply();
+						sPrefs.edit().putString(Settings.SERVIDOR_PORTA_KEY, "443").apply();
+
+						//Payload
+						sPrefs.edit().putString(Settings.CUSTOM_PAYLOAD_KEY, "GET wss://snow.vivo.com.br/ HTTP/1.1[crlf]Host: br.mixvpn.tk[crlf]Upgrade: Websocket[crlf]Connection: Keep-Alive[crlf][crlf]").apply();
+                        sPrefs.edit().putString(Settings.CUSTOM_SNI, "snow.vivo.com.br").apply();
+
+						//Servidor 02 Modo direct (exemplo)
+						sPrefs.edit().putInt(Settings.TUNNELTYPE_KEY, Settings.bTUNNEL_TYPE_SSH_SSL_PAY).apply();
+                        ////==========================================================================================////
+                    }else if(position == 2){
+                        //Informações SSH   SERVIDOR 2
+                        sPrefs.edit().putString(Settings.SERVIDOR_KEY, "ssl-nl.serverip.co").apply();
+                        sPrefs.edit().putString(Settings.SERVIDOR_PORTA_KEY, "443").apply();
+
+                        //Payload
+                        sPrefs.edit().putString(Settings.CUSTOM_SNI, "media.whatsapp.net").apply();
+
+                        //Servidor 02 Modo direct (exemplo)
+                        sPrefs.edit().putInt(Settings.TUNNELTYPE_KEY, Settings.bTUNNEL_TYPE_SSH_SSL).apply();
+						////==========================================================================================////
+                    }else if(position == 3){
+                        //Informações SSH   SERVIDOR 2
+                        sPrefs.edit().putString(Settings.SERVIDOR_KEY, "cdn.jsdelivr.net").apply();
+                        sPrefs.edit().putString(Settings.SERVIDOR_PORTA_KEY, "443").apply();
+
+                        //Payload
+                        sPrefs.edit().putString(Settings.CUSTOM_PAYLOAD_KEY, "GET wss://cdn.jsdelivr.net/ HTTP/1.1[crlf]Host: br.mixvpn.tk[crlf]Upgrade: Websocket[crlf]Connection: Keep-Alive[crlf][crlf]").apply();
+                        sPrefs.edit().putString(Settings.CUSTOM_SNI, "cdn.jsdelivr.net").apply();
+
+                        //Servidor 02 Modo direct (exemplo)
+                        sPrefs.edit().putInt(Settings.TUNNELTYPE_KEY, Settings.bTUNNEL_TYPE_SSH_SSL_PAY).apply();
+                        ////==========================================================================================////
+                    }else if(position == 4){
+                        //Informações SSH   SERVIDOR 2
+                        sPrefs.edit().putString(Settings.SERVIDOR_KEY, "4.icanhazip.com").apply();
+                        sPrefs.edit().putString(Settings.SERVIDOR_PORTA_KEY, "443").apply();
+
+                        //Payload
+                        sPrefs.edit().putString(Settings.CUSTOM_PAYLOAD_KEY, "GET wss://4.icanhazip.com/ HTTP/1.1[crlf]Host: br.mixvpn.tk[crlf]Upgrade: Websocket[crlf]Connection: Keep-Alive[crlf][crlf]").apply();
+                        sPrefs.edit().putString(Settings.CUSTOM_SNI, "4.icanhazip.com").apply();
+
+                        //Servidor 02 Modo direct (exemplo)
+                        sPrefs.edit().putInt(Settings.TUNNELTYPE_KEY, Settings.bTUNNEL_TYPE_SSH_SSL_PAY).apply();
+                        ////==========================================================================================////
+                        
 				    }
                     //Atualiza informações
                     doUpdateLayout();
