@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	
-    <string name="app_name">JefersonBR-MOD</string>
+    <string name="app_name">SocksHttp</string>
     <string name="app_description">SocksHttp é um cliente SSH TÚNNEL, feito para burlar bloqueios locais e censura na rede.</string>
 	
 	<string name="about">Sobre</string>

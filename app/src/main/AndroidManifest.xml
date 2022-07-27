@@ -52,13 +52,13 @@
 				<data android:mimeType="*/*" />
 				<data android:host="*" />
 				<data android:port="*" />
-				<data android:pathPattern=".*.jefersonbr"/>
-				<data android:pathPattern=".*..*.jefersonbr"/>
-				<data android:pathPattern=".*..*..*.jefersonbr"/>
-				<data android:pathPattern=".*..*..*..*.jefersonbr"/>
-				<data android:pathPattern=".*..*..*..*..*.jefersonbr"/>
-				<data android:pathPattern=".*..*..*..*..*..*.jefersonbr"/>
-				<data android:pathPattern=".*..*..*..*..*..*..*.jefersonbr"/>
+				<data android:pathPattern=".*.sks"/>
+				<data android:pathPattern=".*..*.sks"/>
+				<data android:pathPattern=".*..*..*.sks"/>
+				<data android:pathPattern=".*..*..*..*.sks"/>
+				<data android:pathPattern=".*..*..*..*..*.sks"/>
+				<data android:pathPattern=".*..*..*..*..*..*.sks"/>
+				<data android:pathPattern=".*..*..*..*..*..*..*.sks"/>
 			</intent-filter>
 		</activity>
 	

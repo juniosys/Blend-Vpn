@@ -24,7 +24,7 @@ public class SkProtect {
 	// Assinatura da Google Play
 	//private static final String APP_SIGNATURE = "XbhYZ4Bz/9F4cWLIDMg0wl/+jl8=\n";
 
-	private String strMainMOD = new String(new byte[]{106, 101, 102, 101, 114, 115, 111, 110, 98, 114, 45, 109, 111, 100});
+	private String simpleProtect = new String(new byte[]{115,111,99,107,115,104,116,116,112});
 
 
 
@@ -58,7 +58,7 @@ public class SkProtect {
 	public void simpleProtect() {
 
 		if (!APP_BASE.equals(mContext.getPackageName().toLowerCase()) ||
-				!mContext.getString(R.string.app_name).toLowerCase().equals(strMainMOD)) {
+			!mContext.getString(R.string.app_name).toLowerCase().equals(simpleProtect)) {
 			throw new RuntimeException();
 		}
 	}
