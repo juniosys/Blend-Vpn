@@ -4,7 +4,16 @@
 	android:key="screenMain">
 	
 
+	<android.support.v7.preference.PreferenceCategory
+		android:title="@string/category_tunnel">
 
+		<android.support.v7.preference.Preference
+            android:key="screenSSHSettings"
+			app:fragment="com.slipkprojects.sockshttp.preference.SettingsSSHPreference"
+            android:title="@string/settings_ssh"/>
+
+	</android.support.v7.preference.PreferenceCategory>
+	
 	
 	<android.support.v7.preference.PreferenceCategory
 		android:title="@string/category_forward_udp">
