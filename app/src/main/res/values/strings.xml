@@ -56,6 +56,7 @@
 	<string name="ssh_port">Porta</string>
 	<string name="ssh_porta_local">Porta Local (Socks5)</string>
 	<string name="payload">Texto de Conexão</string>
+	<string name="host_sni">Host SNI</string>
 	<string name="proxy_remote">Proxy Remoto</string>
 	<string name="proxy_ip">Proxy IP/Host</string>
 	<string name="proxy_port">Porta</string>

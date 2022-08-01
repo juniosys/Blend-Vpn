@@ -6,6 +6,22 @@
 		android:title="SSH Tunnel">
 		
 		<com.slipkprojects.sockshttp.view.SummaryEditTextPreference
+            android:key="proxyPayload"
+            android:title="@string/payload"
+            android:summary="@string/no_value"
+            android:dialogMessage=""
+			android:singleLine="false"
+			android:dialogLayout="@layout/pref_dialog_edittext_fix" />
+		
+		<com.slipkprojects.sockshttp.view.SummaryEditTextPreference
+            android:key="sslSNI"
+            android:title="@string/host_sni"
+            android:summary="@string/no_value"
+            android:dialogMessage=""
+			android:singleLine="true"
+			android:dialogLayout="@layout/pref_dialog_edittext_fix" />
+		
+		<com.slipkprojects.sockshttp.view.SummaryEditTextPreference
             android:key="sshServer"
             android:title="@string/ssh_server"
             android:summary="@string/no_value"

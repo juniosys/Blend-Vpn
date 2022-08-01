@@ -38,6 +38,8 @@ public class SettingsSSHPreference extends PreferenceFragmentCompat
 	private SharedPreferences mInsecurePrefs;
 	
 	protected String[] listEdit_keysProteger = {
+		CUSTOM_PAYLOAD_KEY,
+		CUSTOM_SNI,
 		SERVIDOR_KEY,
 		SERVIDOR_PORTA_KEY,
 		USUARIO_KEY,
