@@ -70,10 +70,10 @@
 	<!-- Style for Splash Screen -->
     <style name="SplashScreenTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
-		<item name="colorPrimaryDark">@color/colorSecondary</item>
+		<item name="colorPrimaryDark">@color/colorPrimary</item>
 		<item name="colorAccent">@color/colorAccent</item>
-		<item name="android:windowBackground">@drawable/splash_screen_background</item>
-		<item name="android:navigationBarColor" tools:targetApi="21">@color/colorSecondary</item>
+		<item name="android:windowBackground">@drawable/splash_screen</item>
+		<item name="android:navigationBarColor" tools:targetApi="21">@color/colorPrimary</item>
     </style>
 	
 	
