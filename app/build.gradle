@@ -36,4 +36,7 @@ dependencies {
 	
 	// root detect
 	implementation 'com.github.kimchangyoun:rootbeerFresh:+'
+	
+	// Necessário Para TLS v1.3
+	implementation 'org.conscrypt:conscrypt-android:2.5.2'
 }
