@@ -1,27 +1,21 @@
 package com.slipkprojects.sockshttp;
 
-import android.app.Activity;
+import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.os.Build;
+import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.widget.Toolbar;
-import android.support.design.widget.NavigationView;
-import android.content.pm.PackageInfo;
-import com.slipkprojects.sockshttp.util.Utils;
 import android.support.v7.app.AppCompatActivity;
-import com.slipkprojects.sockshttp.R;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
-import android.support.annotation.NonNull;
-import android.view.MenuItem;
 import android.widget.Toast;
-import android.os.Build;
-import android.content.Intent;
-import android.net.Uri;
-import com.slipkprojects.sockshttp.util.GoogleFeedbackUtils;
-import com.slipkprojects.sockshttp.logger.SkStatus;
-import android.support.v4.view.GravityCompat;
+import com.slipkprojects.sockshttp.R;
 import com.slipkprojects.sockshttp.activities.ConfigGeralActivity;
-import com.slipkprojects.sockshttp.activities.AboutActivity;
+import com.slipkprojects.sockshttp.util.Utils;
 
 public class DrawerPanelMain
 	implements NavigationView.OnNavigationItemSelectedListener
@@ -138,14 +132,6 @@ public class DrawerPanelMain
 
 					mActivity.startActivity(Intent.createChooser(email, "Choose an Email client:"));
 				}
-				break;
-				
-			case R.id.miAbout:
-				if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
-            		drawerLayout.closeDrawers();
-        		}
-				Intent aboutIntent = new Intent(mActivity, AboutActivity.class);
-				mActivity.startActivity(aboutIntent);
 				break;*/
 		}
 

@@ -29,13 +29,9 @@ dependencies {
 	
 	// outros
 	implementation 'com.android.support.constraint:constraint-layout:1.0.2'
-	implementation 'com.google.android.gms:play-services-ads-lite:11.8.0'
 	
     implementation 'net.i2p.crypto:eddsa:0.3.0'
 	implementation 'org.connectbot.jbcrypt:jbcrypt:1.0.0'
-	
-	// root detect
-	implementation 'com.github.kimchangyoun:rootbeerFresh:+'
 	
 	// Necessário Para TLS v1.3
 	implementation 'org.conscrypt:conscrypt-android:2.5.2'

@@ -39,37 +39,6 @@
 			android:parentActivityName=".SocksHttpMainActivity"
             android:label="@string/settings"/>
 		
-		<activity android:name=".activities.ConfigImportFileActivity"
-			android:grantUriPermissions="true"
-			android:parentActivityName=".SocksHttpMainActivity"
-			android:label="@string/settings_import">
-			<intent-filter>
-				<action android:name="android.intent.action.VIEW" />
-				<category android:name="android.intent.category.DEFAULT" />
-				<category android:name="android.intent.category.BROWSABLE" />
-				<data android:scheme="file" />
-				<data android:scheme="content" />
-				<data android:mimeType="*/*" />
-				<data android:host="*" />
-				<data android:port="*" />
-				<data android:pathPattern=".*.sks"/>
-				<data android:pathPattern=".*..*.sks"/>
-				<data android:pathPattern=".*..*..*.sks"/>
-				<data android:pathPattern=".*..*..*..*.sks"/>
-				<data android:pathPattern=".*..*..*..*..*.sks"/>
-				<data android:pathPattern=".*..*..*..*..*..*.sks"/>
-				<data android:pathPattern=".*..*..*..*..*..*..*.sks"/>
-			</intent-filter>
-		</activity>
-	
-		<activity android:name=".activities.ConfigExportFileActivity"
-			android:parentActivityName=".SocksHttpMainActivity"
-			android:label="@string/settings_export"/>
-		
-		<activity android:name=".activities.AboutActivity"
-			android:parentActivityName=".SocksHttpMainActivity"
-            android:label="@string/about"/>
-		
 		<activity android:name=".LaunchVpn"
 			android:autoRemoveFromRecents="true"
             android:excludeFromRecents="true"

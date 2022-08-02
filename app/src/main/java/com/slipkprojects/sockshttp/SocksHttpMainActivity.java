@@ -1,97 +1,64 @@
 package com.slipkprojects.sockshttp;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
+import android.net.Uri;
+import android.net.wifi.hotspot2.ConfigParser;
+import android.os.Build;
 import android.os.Bundle;
-import com.slipkprojects.sockshttp.R;
-import android.support.v7.widget.Toolbar;
+import android.os.Handler;
+import android.os.PersistableBundle;
+import android.support.annotation.Nullable;
+import android.support.design.widget.TextInputEditText;
 import android.support.v4.app.DialogFragment;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.content.LocalBroadcastManager;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.widget.AppCompatRadioButton;
+import android.support.v7.widget.SwitchCompat;
+import android.support.v7.widget.Toolbar;
 import android.text.Editable;
+import android.text.Html;
+import android.text.InputType;
 import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.content.Intent;
-import android.support.v4.app.FragmentManager;
-import android.widget.AdapterView;
-import android.widget.Toast;
 import android.view.View;
-import android.content.Context;
-import android.support.v7.widget.SwitchCompat;
-import android.widget.CompoundButton;
-import com.slipkprojects.sockshttp.util.Utils;
-import android.util.Log;
-import android.widget.TextView;
-import android.support.v4.view.GravityCompat;
-import android.widget.EditText;
-import android.support.design.widget.TextInputEditText;
-import com.slipkprojects.sockshttp.DrawerLog;
-import android.support.v4.widget.DrawerLayout;
-import android.net.Uri;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
-import com.slipkprojects.sockshttp.SocksHttpApp;
-import android.widget.CheckBox;
-import android.support.v4.content.LocalBroadcastManager;
-import android.content.BroadcastReceiver;
-import android.content.IntentFilter;
-import android.content.SharedPreferences;
-import com.slipkprojects.sockshttp.activities.ConfigGeralActivity;
-import android.view.LayoutInflater;
-import android.content.pm.PackageManager;
-import android.text.Html;
-import android.support.v7.app.AlertDialog;
-import android.content.pm.PackageInfo;
-import com.slipkprojects.sockshttp.util.SkProtect;
-import com.slipkprojects.sockshttp.logger.SkStatus;
-import android.content.ServiceConnection;
-import android.content.ComponentName;
-import android.os.IBinder;
-import android.widget.LinearLayout;
-import com.slipkprojects.sockshttp.fragments.ProxyRemoteDialogFragment;
-import android.annotation.TargetApi;
-import android.os.Build;
-import android.net.VpnService;
-import android.content.ActivityNotFoundException;
-import android.app.Activity;
-import com.slipkprojects.sockshttp.logger.ConnectionStatus;
-import android.os.Handler;
-import android.support.v4.content.ContextCompat;
-import com.slipkprojects.sockshttp.fragments.ClearConfigDialogFragment;
-import com.slipkprojects.sockshttp.activities.ConfigExportFileActivity;
-import com.slipkprojects.sockshttp.activities.ConfigImportFileActivity;
-import com.slipkprojects.sockshttp.config.Settings;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.os.PersistableBundle;
-import android.content.res.Configuration;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.AppCompatRadioButton;
-import android.widget.RadioGroup;
-import com.slipkprojects.sockshttp.config.ConfigParser;
-import android.support.v4.app.ActivityCompat;
-import android.content.DialogInterface;
-import com.slipkprojects.sockshttp.tunnel.TunnelManagerHelper;
-import com.slipkprojects.sockshttp.LaunchVpn;
-import com.slipkprojects.sockshttp.activities.AboutActivity;
-import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
-import com.slipkprojects.sockshttp.model.ViewFragment;
-import android.text.InputType;
+import android.widget.CompoundButton;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
+import android.widget.RadioGroup;
+import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
+import com.slipkprojects.sockshttp.DrawerLog;
+import com.slipkprojects.sockshttp.LaunchVpn;
+import com.slipkprojects.sockshttp.R;
+import com.slipkprojects.sockshttp.SocksHttpApp;
+import com.slipkprojects.sockshttp.activities.BaseActivity;
+import com.slipkprojects.sockshttp.activities.ConfigGeralActivity;
+import com.slipkprojects.sockshttp.config.Settings;
+import com.slipkprojects.sockshttp.fragments.ClearConfigDialogFragment;
+import com.slipkprojects.sockshttp.fragments.ProxyRemoteDialogFragment;
+import com.slipkprojects.sockshttp.logger.ConnectionStatus;
+import com.slipkprojects.sockshttp.logger.SkStatus;
+import com.slipkprojects.sockshttp.tunnel.TunnelManagerHelper;
+import com.slipkprojects.sockshttp.util.SkProtect;
+import com.slipkprojects.sockshttp.util.Utils;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
-import android.support.design.widget.NavigationView;
-import android.util.AttributeSet;
-import com.slipkprojects.sockshttp.util.GoogleFeedbackUtils;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdListener;
-import com.slipkprojects.sockshttp.activities.BaseActivity;
-import com.slipkprojects.sockshttp.tunnel.TunnelUtils;
-import android.text.TextUtils;
-import com.slipkprojects.sockshttp.preference.LocaleHelper;
-import android.support.annotation.Nullable;
-import android.widget.Spinner;
-import android.widget.ArrayAdapter;
 
 /**
  * Activity Principal
@@ -109,11 +76,9 @@ public class SocksHttpMainActivity extends BaseActivity
 
 	private DrawerLog mDrawer;
 	private DrawerPanelMain mDrawerPanel;
-
 	private Settings mConfig;
 	private Toolbar toolbar_main;
 	private Handler mHandler;
-
 	private LinearLayout mainLayout;
 	private LinearLayout loginLayout;
 	private LinearLayout proxyInputLayout;
@@ -123,15 +88,11 @@ public class SocksHttpMainActivity extends BaseActivity
 	private TextInputEditText payloadEdit;
 	private SwitchCompat customPayloadSwitch;
 	private Button starterButton;
-
 	private ImageButton inputPwShowPass;
 	private TextInputEditText inputPwUser;
 	private TextInputEditText inputPwPass;
-
 	private LinearLayout configMsgLayout;
 	private TextView configMsgText;
-
-	private AdView adsBannerView;
 	private Spinner servidores;
 
 	@Override
@@ -147,7 +108,6 @@ public class SocksHttpMainActivity extends BaseActivity
 		SharedPreferences prefs = getSharedPreferences(SocksHttpApp.PREFS_GERAL, Context.MODE_PRIVATE);
 
 		boolean showFirstTime = prefs.getBoolean("connect_first_time", true);
-		int lastVersion = prefs.getInt("last_version", 0);
 
 		// se primeira vez
 		if (showFirstTime)
@@ -160,28 +120,6 @@ public class SocksHttpMainActivity extends BaseActivity
 
 			showBoasVindas();
 		}
-
-		try {
-			int idAtual = ConfigParser.getBuildId(this);
-
-			if (lastVersion < idAtual) {
-				SharedPreferences.Editor pEdit = prefs.edit();
-				pEdit.putInt("last_version", idAtual);
-				pEdit.apply();
-
-				// se estiver atualizando
-				if (!showFirstTime) {
-					if (lastVersion <= 12) {
-						Settings.setDefaultConfig(this);
-						Settings.clearSettings(this);
-
-						Toast.makeText(this, "As configurações foram limpas para evitar bugs",
-								Toast.LENGTH_LONG).show();
-					}
-				}
-
-			}
-		} catch(IOException e) {}
 
 
 		// set layout
@@ -214,15 +152,6 @@ public class SocksHttpMainActivity extends BaseActivity
 		setSupportActionBar(toolbar_main);
 
 		mDrawer.setDrawer(this);
-
-
-		// set ADS
-		adsBannerView = (AdView) findViewById(R.id.adBannerMainView);
-
-		if (!BuildConfig.DEBUG) {
-			//adsBannerView.setAdUnitId(SocksHttpApp.ADS_UNITID_BANNER_MAIN);
-		}
-
 
 
 		mainLayout = (LinearLayout) findViewById(R.id.activity_mainLinearLayout);
@@ -881,10 +810,6 @@ public class SocksHttpMainActivity extends BaseActivity
 		doSaveData();
 
 		SkStatus.removeStateListener(this);
-
-		if (adsBannerView != null) {
-			adsBannerView.pause();
-		}
 	}
 
 	@Override
@@ -896,10 +821,6 @@ public class SocksHttpMainActivity extends BaseActivity
 
 		LocalBroadcastManager.getInstance(this)
 				.unregisterReceiver(mActivityReceiver);
-
-		if (adsBannerView != null) {
-			adsBannerView.destroy();
-		}
 	}
 
 

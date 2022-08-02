@@ -1,21 +1,12 @@
 package com.slipkprojects.sockshttp;
 
 import android.app.Application;
-import android.support.v7.app.AppCompatDelegate;
-import com.slipkprojects.sockshttp.preference.SettingsPreference;
-import com.slipkprojects.sockshttp.util.SkProtect;
-import com.slipkprojects.sockshttp.logger.SkStatus;
 import android.content.Context;
-import android.content.pm.PackageInfo;
-import com.slipkprojects.sockshttp.util.Utils;
-import android.os.Build;
-import android.content.pm.PackageManager;
+import android.content.res.Configuration;
+import android.support.v7.app.AppCompatDelegate;
 import com.slipkprojects.sockshttp.SocksHttpCore;
 import com.slipkprojects.sockshttp.config.Settings;
-import android.util.Log;
-import com.google.android.gms.ads.MobileAds;
-import android.content.res.Configuration;
-import com.slipkprojects.sockshttp.preference.LocaleHelper;
+import com.slipkprojects.sockshttp.util.SkProtect;
 
 /**
 * App
@@ -24,11 +15,6 @@ public class SocksHttpApp extends Application
 {
 	private static final String TAG = SocksHttpApp.class.getSimpleName();
 	public static final String PREFS_GERAL = "SocksHttpGERAL";
-	
-	public static final String ADS_UNITID_INTERSTITIAL_MAIN = "ca-app-pub-6560862030501171/1687567442";
-	public static final String ADS_UNITID_BANNER_MAIN = "ca-app-pub-6560862030501171/3101206569";
-	public static final String ADS_UNITID_BANNER_SOBRE = "ca-app-pub-6560862030501171/6860519994";
-	public static final String ADS_UNITID_BANNER_TEST = "ca-app-pub-3940256099942544/6300978111";
 	public static final String APP_FLURRY_KEY = "RQQ8J9Q2N4RH827G32X9";
 	
 	private static SocksHttpApp mApp;
@@ -53,9 +39,6 @@ public class SocksHttpApp extends Application
 		
 		// protege o app
 		SkProtect.init(this);
-		
-		// Initialize the Mobile Ads SDK.
-        MobileAds.initialize(this);
 		
 		// modo noturno
 		setModoNoturno(this);
