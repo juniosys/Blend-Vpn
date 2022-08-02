@@ -140,6 +140,29 @@ public class Settings implements SettingsConstants
 	* Vpn Settings
 	*/
 	
+	public boolean getVpnUdpForward(){
+		return mPrefs.getBoolean(UDPFORWARD_KEY, true);
+	}
+
+	public void setVpnUdpForward(boolean use){
+		SharedPreferences.Editor editor = mPrefs.edit();
+		editor.putBoolean(UDPFORWARD_KEY, use);
+		editor.commit();
+	}
+
+	public String getVpnUdpResolver(){
+		return mPrefs.getString(UDPRESOLVER_KEY, "127.0.0.1:7300");
+	}
+
+	public void setVpnUdpResolver(String str) {
+		if (str == null || str.isEmpty()) {
+			str = "127.0.0.1:7300";
+		}
+		SharedPreferences.Editor editor = mPrefs.edit();
+		editor.putString(UDPRESOLVER_KEY, str);
+		editor.commit();
+	}
+	
 	public boolean getVpnDnsForward(){
 		return mPrefs.getBoolean(DNSFORWARD_KEY, true);
 	}
@@ -160,29 +183,6 @@ public class Settings implements SettingsConstants
 		}
 		SharedPreferences.Editor editor = mPrefs.edit();
 		editor.putString(DNSRESOLVER_KEY, str);
-		editor.commit();
-	}
-
-	public boolean getVpnUdpForward(){
-		return mPrefs.getBoolean(UDPFORWARD_KEY, false);
-	}
-	
-	public void setVpnUdpForward(boolean use){
-		SharedPreferences.Editor editor = mPrefs.edit();
-		editor.putBoolean(UDPFORWARD_KEY, use);
-		editor.commit();
-	}
-
-	public String getVpnUdpResolver(){
-		return mPrefs.getString(UDPRESOLVER_KEY, "127.0.0.1:7300");
-	}
-	
-	public void setVpnUdpResolver(String str) {
-		if (str == null || str.isEmpty()) {
-			str = "127.0.0.1:7300";
-		}
-		SharedPreferences.Editor editor = mPrefs.edit();
-		editor.putString(UDPRESOLVER_KEY, str);
 		editor.commit();
 	}
 	
@@ -212,10 +212,10 @@ public class Settings implements SettingsConstants
 		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
 		SharedPreferences.Editor editor = prefs.edit();
 
-		editor.putBoolean(DNSFORWARD_KEY, true);
-		editor.putString(DNSRESOLVER_KEY, "1.1.1.1");
 		editor.putBoolean(UDPFORWARD_KEY, true);
 		editor.putString(UDPRESOLVER_KEY, "127.0.0.1:7300");
+		editor.putBoolean(DNSFORWARD_KEY, true);
+		editor.putString(DNSRESOLVER_KEY, "1.1.1.1");
 		editor.putString(MODO_NOTURNO_KEY, "off");
 		editor.putString(PINGER_KEY, "3");
 		editor.putString(MAXIMO_THREADS_KEY, "8th");
