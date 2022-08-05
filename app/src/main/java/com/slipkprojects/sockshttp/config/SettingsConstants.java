@@ -18,6 +18,7 @@ public interface SettingsConstants {
     FILTER_APPS_LIST = "filterAppsList",
     PROXY_IP_KEY = "proxyRemoto",
     PROXY_PORTA_KEY = "proxyRemotoPorta",
+	PAYLOAD_DEFAULT = "CONNECT [host_port] [protocol][crlf][crlf]",
     CUSTOM_PAYLOAD_KEY = "proxyPayload",
     CUSTOM_SNI = "sslSNI",
     PROXY_USAR_DEFAULT_PAYLOAD = "usarDefaultPayload",
@@ -26,30 +27,24 @@ public interface SettingsConstants {
     CONFIG_MENSAGEM_KEY = "mensagemConfig",
     CONFIG_VALIDADE_KEY = "validadeConfig",
     CONFIG_MENSAGEM_EXPORTAR_KEY = "mensagemConfigExport",
-    CONFIG_INPUT_PASSWORD_KEY = "inputPassword";
+    CONFIG_INPUT_PASSWORD_KEY = "inputPassword",
 
 	// Vpn
-	public static final String
     UDPFORWARD_KEY = "udpForward",
 	UDPRESOLVER_KEY = "udpResolver",
 	DNSFORWARD_KEY = "dnsForward",
-	DNSRESOLVER_KEY = "dnsResolver";
+	DNSRESOLVER_KEY = "dnsResolver",
 
 	// SSH
-	public static final String
 	SERVIDOR_KEY = "sshServer",
 	SERVIDOR_PORTA_KEY = "sshPort",
 	USUARIO_KEY = "sshUser",
 	SENHA_KEY = "sshPass",
 	KEYPATH_KEY = "keyPath",
 	PORTA_LOCAL_KEY = "sshPortaLocal",
-	PINGER_KEY = "pingerSSH";
-
-	public static final String
-    PAYLOAD_DEFAULT = "CONNECT [host_port] [protocol][crlf][crlf]";
+	PINGER_KEY = "pingerSSH",
 
 	// Tunnel Type
-	public static final String
     TUNNELTYPE_KEY = "tunnelType",
     TUNNEL_TYPE_SSH_DIRECT = "sshDirect",
     TUNNEL_TYPE_SSH_PROXY = "sshProxy",
