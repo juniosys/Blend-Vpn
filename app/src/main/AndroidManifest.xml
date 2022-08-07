@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.slipkprojects.sockshttp">
+    package="com.juniocam.blendvpn">
 	
 	
 	<!--- Permissions -->
@@ -14,7 +14,7 @@
 	
 	<!--- Application -->
     <application
-		android:name=".SocksHttpApp"
+		android:name=".BlendApp"
 		android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
@@ -32,11 +32,11 @@
             </intent-filter>
         </activity>
 		
-		<activity android:name=".SocksHttpMainActivity"
+		<activity android:name=".BlendMainActivity"
 			android:label="@string/app_name"/>
 		
 		<activity android:name=".activities.ConfigGeralActivity"
-			android:parentActivityName=".SocksHttpMainActivity"
+			android:parentActivityName=".BlendMainActivity"
             android:label="@string/settings"/>
 		
 		<activity android:name=".LaunchVpn"
@@ -81,7 +81,7 @@
 
 		
 		<!--- Services -->
-		<service android:label="SocksHttp Vpn"
+		<service android:label="Blend VpnService"
 			android:name=".tunnel.vpn.TunnelVpnService"
 			android:exported="false"
 			android:enabled="true"
@@ -91,8 +91,8 @@
 			</intent-filter>
 		</service>
 		
-		<service android:label="SocksHttp Service"
-			android:name=".SocksHttpService"
+		<service android:label="Blend Service"
+			android:name=".BlendService"
 			android:stopWithTask="false"
 			android:exported="false">
 		</service>

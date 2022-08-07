@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	
-    <string name="app_name">SocksHttp</string>
-    <string name="app_description">SocksHttp é um cliente SSH TÚNNEL, feito para burlar bloqueios locais e censura na rede.</string>
+    <string name="app_name">Blend VPN</string>
+    <string name="app_description">Blend VPN é um cliente SSH TÚNNEL, feito para burlar bloqueios locais e censura na rede.</string>
 	
 	<string name="about">Sobre</string>
 	<string name="config">Configuração</string>
@@ -114,8 +114,8 @@
 	<string name="disabled">Desativado</string>
 	
 	<!--Welcome Wizard strings (DJH)-->
-	<string name="wizard_details">Alguns detalhes do SocksHttp</string>
-	<string name="wizard_details_msg">SocksHttp é cliente VPN que funciona atráves de um servidor SSH. O aplicativo em si é inútil sem uma configuração, sendo assim apenas para uso de usuários avançados.</string>
+	<string name="wizard_details">Alguns detalhes do Blend VPN</string>
+	<string name="wizard_details_msg">Blend VPN é cliente VPN que funciona atráves de um servidor SSH. O aplicativo em si é inútil sem uma configuração, sendo assim apenas para uso de usuários avançados.</string>
 	<string name="payload_details">Palavras chaves</string>
 	<string name="payload_details_msg">Atualmente são suportado as seguintes palavras chaves no texto de conexão: [method] [host_port] [ssh] [host] [port] [protocol] [crlf] [cr] [lf] [lfcr] [ua] [random=*;] [rotate=*;] [split] [delay_split]</string>
 	<string name="project_home">Página Principal do Desenvolvedor: </string>
@@ -164,11 +164,11 @@
 	
 	
 	<string name="channel_name_background">Connection statistics</string>
-    <string name="channel_description_background">Ongoing statistics of the established SocksHttp connection</string>
+    <string name="channel_description_background">Ongoing statistics of the established Blend VPN connection</string>
     <string name="channel_name_status">Connection status change</string>
-    <string name="channel_description_status">Status changes of the SocksHttp connection (Connecting, authenticating,…)</string>
+    <string name="channel_description_status">Status changes of the Blend VPN connection (Connecting, authenticating,…)</string>
 	<string name="channel_name_userreq">User interaction required</string>
-    <string name="channel_description_userreq">SocksHttp connection requires a user input, e.g. two factor authentification</string>
+    <string name="channel_description_userreq">Blend VPN connection requires a user input, e.g. two factor authentification</string>
 	
 	<string name="state_starting">Iniciando</string>
 	<string name="state_connecting">Conectando</string>

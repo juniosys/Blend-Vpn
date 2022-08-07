@@ -9,7 +9,7 @@
 
 		<android.support.v7.preference.Preference
             android:key="screenSSHSettings"
-			app:fragment="com.slipkprojects.sockshttp.preference.SettingsSSHPreference"
+			app:fragment="com.juniocam.blendvpn.preference.SettingsSSHPreference"
             android:title="@string/settings_ssh"/>
 
 	</android.support.v7.preference.PreferenceCategory>
@@ -23,7 +23,7 @@
 			android:summary="@string/summary_forward_udp"
 			android:title="@string/title_forward_udp" />
 
-		<com.slipkprojects.sockshttp.view.SummaryEditTextPreference
+		<com.juniocam.blendvpn.view.SummaryEditTextPreference
             android:key="udpResolver"
             android:title="@string/title_resolver_udp"
             android:summary="@string/summary_resolver_udp"
@@ -42,7 +42,7 @@
 			android:summary="@string/summary_forward_dns"
 			android:title="@string/title_forward_dns" />
 		
-		<com.slipkprojects.sockshttp.view.SummaryEditTextPreference
+		<com.juniocam.blendvpn.view.SummaryEditTextPreference
             android:key="dnsResolver"
             android:title="@string/title_dns_primary"
             android:summary="@string/summary_dns_primary"
@@ -64,7 +64,7 @@
         	android:title="@string/title_mode_night"
 		/>
 		
-		<com.slipkprojects.sockshttp.view.SummaryEditTextPreference
+		<com.juniocam.blendvpn.view.SummaryEditTextPreference
             android:key="pingerSSH"
             android:title="@string/title_ping_time"
 			android:maxLength="3"
@@ -104,7 +104,7 @@
 	
 	<android.support.v7.preference.Preference
     	android:key="screenAdvancedSettings"
-		app:fragment="com.slipkprojects.sockshttp.preference.SettingsAdvancedPreference"
+		app:fragment="com.juniocam.blendvpn.preference.SettingsAdvancedPreference"
         android:title="@string/category_advanced_settings"
 	/>
 	
