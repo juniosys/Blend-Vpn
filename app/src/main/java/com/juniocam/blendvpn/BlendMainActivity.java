@@ -166,7 +166,7 @@ public class BlendMainActivity extends BaseActivity
 		final SharedPreferences sPrefs = mConfig.getPrefsPrivate();
 
         //Declarando o xml do spinner
-		servidores = (Spinner) findViewById(R.id.serverSpin);
+		servidores = (Spinner) findViewById(R.id.serverSpinner);
 
 		// Aqui sao os nomes que vcs quiserem pro servidor, pode ser oq vc quiser(nao importa)
 		List<String> ListaServidores = new ArrayList<String>();
