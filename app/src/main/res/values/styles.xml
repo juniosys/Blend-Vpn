@@ -50,8 +50,8 @@
 	
 	
 	<!-- Preference Theme -->
-	<style name="AppPreference"
-        parent="PreferenceThemeOverlay">
+	<style name="AppPreference" parent="PreferenceThemeOverlay">
+		<item name="android:textSize">15sp</item>
 	</style>
 	
 	
