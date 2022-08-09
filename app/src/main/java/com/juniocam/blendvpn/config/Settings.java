@@ -43,22 +43,6 @@ public class Settings implements SettingsConstants
 		return mPrefsPrivate;
 	}
 	
-	
-	/**
-	* Config File
-	*/
-	
-	public String getMensagemConfigExportar() {
-		return mPrefs.getString(CONFIG_MENSAGEM_EXPORTAR_KEY, "");
-	}
-
-	public void setMensagemConfigExportar(String str) {
-		SharedPreferences.Editor editor = mPrefs.edit();
-		editor.putString(CONFIG_MENSAGEM_EXPORTAR_KEY, str);
-		editor.commit();
-	}
-	
-	
 	/**
 	* Geral
 	*/

@@ -8,7 +8,6 @@ public interface SettingsConstants {
     HIDE_LOG_KEY = "hideLog",
     MODO_DEBUG_KEY = "modeDebug",
     MODO_NOTURNO_KEY = "modeNight",
-    BLOQUEAR_ROOT_KEY = "blockRoot",
     IDIOMA_KEY = "idioma",
     TETHERING_SUBNET = "tetherSubnet",
     DISABLE_DELAY_KEY = "disableDelaySSH",
@@ -24,9 +23,6 @@ public interface SettingsConstants {
     PROXY_USAR_DEFAULT_PAYLOAD = "usarDefaultPayload",
     PROXY_USAR_AUTENTICACAO_KEY = "usarProxyAutenticacao",
     CONFIG_PROTEGER_KEY = "protegerConfig",
-    CONFIG_MENSAGEM_KEY = "mensagemConfig",
-    CONFIG_VALIDADE_KEY = "validadeConfig",
-    CONFIG_MENSAGEM_EXPORTAR_KEY = "mensagemConfigExport",
     CONFIG_INPUT_PASSWORD_KEY = "inputPassword",
 
 	// Vpn
