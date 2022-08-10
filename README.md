@@ -1,3 +1,3 @@
-# SocksHttp
-Cliente SSH Túnnel, simples e rápido.
+# BLEND VPN
+Cliente SSH Túnnel.
 
