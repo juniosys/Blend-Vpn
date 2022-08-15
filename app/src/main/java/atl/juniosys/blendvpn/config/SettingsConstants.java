@@ -7,6 +7,7 @@ public interface SettingsConstants {
     AUTO_CLEAR_LOGS_KEY = "autoClearLogs",
     HIDE_LOG_KEY = "hideLog",
     MODO_DEBUG_KEY = "modeDebug",
+	COMPRESSION_SSH_KEY = "compressionSSH",
     MODO_NOTURNO_KEY = "modeNight",
     IDIOMA_KEY = "idioma",
     TETHERING_SUBNET = "tetherSubnet",

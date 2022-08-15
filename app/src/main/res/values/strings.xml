@@ -50,6 +50,10 @@
 	<string name="title_language">Idioma</string>
 	<string name="category_tunnel">Túnnel</string>
 	
+	<string name="title_compression_data">Compressão de Dados</string>
+    <string name="summary_compression_data">Comprime e Acelera a Tranferência de dados. Não recomendado para dispositivos com pouca memória RAM.</string>
+    <string name="alert_compression_data">Compressão de Dados Ativa.</string>
+	
 	<!-- novo -->
 	
 	<string name="ssh_server">Servidor</string>

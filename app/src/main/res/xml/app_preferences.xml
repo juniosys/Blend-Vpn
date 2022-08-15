@@ -56,6 +56,12 @@
 	<android.support.v7.preference.PreferenceCategory
 		android:title="@string/category_settings_adicionais">
 		
+		<android.support.v7.preference.CheckBoxPreference
+            android:title="@string/title_compression_data"
+            android:key="compressionSSH"
+            android:summary="@string/summary_compression_data"
+		/>
+		
 		<android.support.v7.preference.ListPreference
         	android:key="modeNight"
 			android:defaultValue="off"

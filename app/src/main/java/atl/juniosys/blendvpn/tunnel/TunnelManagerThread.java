@@ -314,6 +314,12 @@ public class TunnelManagerThread
 			if (mConfig.getIsDisabledDelaySSH()) {
 				mConnection.setTCPNoDelay(true);
 			}
+			
+			// Compression SSH
+			if (mConfig.compression_ssh()){
+				mConnection.setCompression(true);
+				BlendStatus.logInfo(R.string.alert_compression_data);
+			}
 
 			// proxy
 			addProxy(prefs.getBoolean(Settings.CONFIG_PROTEGER_KEY, false), prefs.getInt(Settings.TUNNELTYPE_KEY, Settings.bTUNNEL_TYPE_SSH_DIRECT),

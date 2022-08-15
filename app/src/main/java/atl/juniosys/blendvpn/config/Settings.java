@@ -57,6 +57,10 @@ public class Settings implements SettingsConstants
 		editor.commit();
 	}
 	
+	public boolean compression_ssh() {
+		return mPrefs.getBoolean(COMPRESSION_SSH_KEY, true);
+	}
+	
 	public String getModoNoturno() {
 		return mPrefs.getString(MODO_NOTURNO_KEY, "off");
 	}
@@ -200,6 +204,7 @@ public class Settings implements SettingsConstants
 		editor.putString(UDPRESOLVER_KEY, "127.0.0.1:7300");
 		editor.putBoolean(DNSFORWARD_KEY, true);
 		editor.putString(DNSRESOLVER_KEY, "1.1.1.1");
+		editor.putBoolean(COMPRESSION_SSH_KEY, true);
 		editor.putString(MODO_NOTURNO_KEY, "off");
 		editor.putString(PINGER_KEY, "3");
 		editor.putString(MAXIMO_THREADS_KEY, "8th");

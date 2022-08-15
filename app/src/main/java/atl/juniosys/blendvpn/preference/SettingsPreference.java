@@ -39,6 +39,7 @@ public class SettingsPreference extends PreferenceFragmentCompat
 		PINGER_KEY,
 		AUTO_CLEAR_LOGS_KEY,
 		HIDE_LOG_KEY,
+		COMPRESSION_SSH_KEY,
 		MODO_NOTURNO_KEY,
 		IDIOMA_KEY
 	};
