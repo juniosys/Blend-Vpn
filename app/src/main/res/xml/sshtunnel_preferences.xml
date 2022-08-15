@@ -5,7 +5,7 @@
 	<android.support.v7.preference.PreferenceCategory
 		android:title="SSH Tunnel">
 		
-		<com.juniocam.blendvpn.view.SummaryEditTextPreference
+		<atl.juniosys.blendvpn.view.SummaryEditTextPreference
             android:key="proxyPayload"
             android:title="@string/payload"
             android:summary="@string/no_value"
@@ -13,7 +13,7 @@
 			android:singleLine="false"
 			android:dialogLayout="@layout/pref_dialog_edittext_fix" />
 		
-		<com.juniocam.blendvpn.view.SummaryEditTextPreference
+		<atl.juniosys.blendvpn.view.SummaryEditTextPreference
             android:key="sslSNI"
             android:title="@string/host_sni"
             android:summary="@string/no_value"
@@ -21,7 +21,7 @@
 			android:singleLine="true"
 			android:dialogLayout="@layout/pref_dialog_edittext_fix" />
 		
-		<com.juniocam.blendvpn.view.SummaryEditTextPreference
+		<atl.juniosys.blendvpn.view.SummaryEditTextPreference
             android:key="sshServer"
             android:title="@string/ssh_server"
             android:summary="@string/no_value"
@@ -29,7 +29,7 @@
 			android:singleLine="true"
 			android:dialogLayout="@layout/pref_dialog_edittext_fix" />
 
-		<com.juniocam.blendvpn.view.SummaryEditTextPreference
+		<atl.juniosys.blendvpn.view.SummaryEditTextPreference
             android:maxLength="5"
             android:key="sshPort"
             android:title="@string/ssh_port"
@@ -43,7 +43,7 @@
 	<android.support.v7.preference.PreferenceCategory
 		android:title="@string/title_auth">
 			
-		<com.juniocam.blendvpn.view.SummaryEditTextPreference
+		<atl.juniosys.blendvpn.view.SummaryEditTextPreference
             android:key="sshUser"
             android:title="@string/auth_username"
             android:summary="@string/no_value"
@@ -51,7 +51,7 @@
 			android:singleLine="true"
 			android:dialogLayout="@layout/pref_dialog_edittext_fix" />
 		
-		<com.juniocam.blendvpn.view.PasswordEditTextPreference
+		<atl.juniosys.blendvpn.view.PasswordEditTextPreference
             android:key="sshPass"
             android:title="@string/password"
             android:summary="@string/no_value"
@@ -65,7 +65,7 @@
 	<android.support.v7.preference.PreferenceCategory
 		android:title="@string/category_forward_port">
 
-		<com.juniocam.blendvpn.view.SummaryEditTextPreference
+		<atl.juniosys.blendvpn.view.SummaryEditTextPreference
             android:maxLength="5"
             android:key="sshPortaLocal"
             android:title="@string/ssh_porta_local"
