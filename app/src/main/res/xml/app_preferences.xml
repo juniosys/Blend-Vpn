@@ -93,7 +93,7 @@
 	
 		<android.support.v7.preference.ListPreference
         	android:key="idioma"
-			android:defaultValue="default"
+			android:defaultValue="pt-br"
         	android:entries="@array/pref_idioma_option_labels"
         	android:entryValues="@array/pref_idioma_option_values"
         	android:title="@string/title_language"

@@ -4,15 +4,13 @@
 	
 	<!-- Idioma -->
 	<array name="pref_idioma_option_labels">
-        <item>Default</item>
 	    <item>Español</item>
 		<item>Português [BR]</item>
     </array>
 
     <array name="pref_idioma_option_values">
-        <item>default</item>
         <item>es</item>
-		<item>pt-BR</item>
+		<item>pt-br</item>
     </array>
 	
 	

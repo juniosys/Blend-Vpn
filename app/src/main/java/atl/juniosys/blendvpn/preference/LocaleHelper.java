@@ -14,14 +14,13 @@ import java.util.Locale;
 public class LocaleHelper {
 
 	@Retention(RetentionPolicy.SOURCE)
-	@StringDef({ DEFAULT, PORTUGUES_BR, SPANISH })
+	@StringDef({ PORTUGUES_BR, SPANISH })
 	public @interface LocaleDef {
-		String[] SUPPORTED_LOCALES = { DEFAULT, PORTUGUES_BR, SPANISH };
+		String[] SUPPORTED_LOCALES = { PORTUGUES_BR, SPANISH };
 	}
 
 	//static final String ENGLISH = "en";
-	static final String DEFAULT = "default";
-	static final String PORTUGUES_BR = "pt-BR";
+	static final String PORTUGUES_BR = "pt-br";
 	static final String SPANISH = "es";
 
 	/**
@@ -62,7 +61,7 @@ public class LocaleHelper {
 	private static Context updateResources(Context context, String language) {
 		Locale locale = Locale.getDefault();
 		
-		if (!language.equals(DEFAULT)) {
+		if (!language.equals(PORTUGUES_BR)) {
 			/* handle locales with the country in it, i.e. zh_CN, zh_TW, etc */
             String localeSplit[] = language.split("_");
             if (localeSplit.length > 1) {
