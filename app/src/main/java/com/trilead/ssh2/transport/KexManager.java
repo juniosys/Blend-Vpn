@@ -32,6 +32,8 @@ import com.trilead.ssh2.packets.PacketNewKeys;
 import com.trilead.ssh2.packets.Packets;
 import com.trilead.ssh2.signature.KeyAlgorithm;
 import com.trilead.ssh2.signature.KeyAlgorithmManager;
+import com.trilead.ssh2.compression.CompressionFactory;
+import com.trilead.ssh2.compression.ICompressor;
 
 
 /**
@@ -284,6 +286,7 @@ public class KexManager implements MessageHandler
 
 		BlockCipher cbc;
 		MessageMac mac;
+		ICompressor comp;
 
 		try
 		{
@@ -291,6 +294,8 @@ public class KexManager implements MessageHandler
 					km.initial_iv_client_to_server);
 
 			mac = new MessageMac(kxs.np.mac_algo_client_to_server, km.integrity_key_client_to_server);
+			
+			comp = CompressionFactory.createCompressor(kxs.np.comp_algo_client_to_server);
 
 		}
 		catch (IllegalArgumentException e1)
@@ -299,6 +304,7 @@ public class KexManager implements MessageHandler
 		}
 
 		tm.changeSendCipher(cbc, mac);
+		tm.changeSendCompression(comp);
 		tm.kexFinished();
 	}
 
@@ -468,6 +474,7 @@ public class KexManager implements MessageHandler
 
 			BlockCipher cbc;
 			MessageMac mac;
+			ICompressor comp;
 
 			try
 			{
@@ -475,6 +482,8 @@ public class KexManager implements MessageHandler
 						km.enc_key_server_to_client, km.initial_iv_server_to_client);
 
 				mac = new MessageMac(kxs.np.mac_algo_server_to_client, km.integrity_key_server_to_client);
+				
+				comp = CompressionFactory.createCompressor(kxs.np.comp_algo_server_to_client);
 
 			}
 			catch (IllegalArgumentException e1)
@@ -483,6 +492,7 @@ public class KexManager implements MessageHandler
 			}
 
 			tm.changeRecvCipher(cbc, mac);
+			tm.changeRecvCompression(comp);
 
 			ConnectionInfo sci = new ConnectionInfo();
 
@@ -496,6 +506,8 @@ public class KexManager implements MessageHandler
 			sci.serverToClientMACAlgorithm = kxs.np.mac_algo_server_to_client;
 			sci.serverHostKeyAlgorithm = kxs.np.server_host_key_algo;
 			sci.serverHostKey = kxs.hostkey;
+			sci.clientToServerCompressionAlgorithm = kxs.np.comp_algo_client_to_server;
+			sci.serverToClientCompressionAlgorithm = kxs.np.comp_algo_server_to_client;
 
 			synchronized (accessLock)
 			{

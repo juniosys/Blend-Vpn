@@ -27,6 +27,7 @@ import com.trilead.ssh2.packets.PacketDisconnect;
 import com.trilead.ssh2.packets.Packets;
 import com.trilead.ssh2.packets.TypesReader;
 import com.trilead.ssh2.util.Tokenizer;
+import com.trilead.ssh2.compression.ICompressor;
 
 
 /*
@@ -546,6 +547,27 @@ public class TransportManager
 	{
 		tc.changeSendCipher(bc, mac);
 	}
+	
+	/**
+	 * @param comp
+	 */
+	public void changeRecvCompression(ICompressor comp) {
+		tc.changeRecvCompression(comp);
+	}
+
+	/**
+	 * @param comp
+	 */
+	public void changeSendCompression(ICompressor comp) {
+		tc.changeSendCompression(comp);
+	}
+
+	/**
+	 *
+	 */
+	public void startCompression() {
+		tc.startCompression();
+	}
 
 	public void sendAsynchronousMessage(byte[] msg) throws IOException
 	{
@@ -711,6 +733,10 @@ public class TransportManager
 			{
 				km.handleMessage(msg, msglen);
 				continue;
+			}
+			
+			if (type == Packets.SSH_MSG_USERAUTH_SUCCESS) {
+				tc.startCompression();
 			}
 
 			MessageHandler mh = null;
