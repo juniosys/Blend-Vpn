@@ -15,7 +15,7 @@ public class Pdnsd extends Thread {
 	private final static String TAG = "PdnsdThread";
 	private final static String PDNSD_SERVER = "server {\n label= \"%1$s\";\n ip = %2$s;\n port = %3$d;\n uptest = none;\n }\n";
 	private final static String PDNSD_SERVER_TEST = "server {\n label= \"%1$s\";\n ip = %2$s;\n port = %3$d;\n reject = ::/0;\n reject_policy = negate;\n reject_recursively = on;\n timeout = 5;\n }\n";
-	private final static String PDNSD_BIN = "pdnsd";
+	private final static String PDNSD_BIN = "libpdnsd";
 	
 	private OnPdnsdListener mListener;
 	public interface OnPdnsdListener {

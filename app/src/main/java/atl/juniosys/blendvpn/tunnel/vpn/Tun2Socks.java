@@ -15,7 +15,7 @@ import java.io.IOException;
 public class Tun2Socks extends Thread implements StreamGobbler.OnLineListener {
 	
     private static final String TAG = Tun2Socks.class.getSimpleName();
-    private static final String TUN2SOCKS_BIN = "tun2socks";
+    private static final String TUN2SOCKS_BIN = "libtun2socks";
 	
 	private OnTun2SocksListener mListener;
 	public interface OnTun2SocksListener {
