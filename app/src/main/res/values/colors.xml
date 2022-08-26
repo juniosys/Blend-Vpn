@@ -25,4 +25,7 @@
 	<color name="colorPrimaryBackground">#EAEAEA</color>
 	<color name="colorSecondaryBackground">#ffffff</color>
 	
+	<color name="colorLogsText">@color/blue_light</color>
+	<color name="colorLogsBackground">#90000000</color>
+	
 </resources>
