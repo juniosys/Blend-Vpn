@@ -9,7 +9,7 @@
 
 		<android.support.v7.preference.Preference
             android:key="screenSSHSettings"
-			app:fragment="atl.juniosys.blendvpn.preference.SettingsSSHPreference"
+			app:fragment="juniosys.blendvpn.preference.SettingsSSHPreference"
             android:title="@string/settings_ssh"/>
 
 	</android.support.v7.preference.PreferenceCategory>
@@ -23,7 +23,7 @@
 			android:summary="@string/summary_forward_udp"
 			android:title="@string/title_forward_udp" />
 
-		<atl.juniosys.blendvpn.view.SummaryEditTextPreference
+		<juniosys.blendvpn.view.SummaryEditTextPreference
             android:key="udpResolver"
             android:title="@string/title_resolver_udp"
             android:summary="@string/summary_resolver_udp"
@@ -42,7 +42,7 @@
 			android:summary="@string/summary_forward_dns"
 			android:title="@string/title_forward_dns" />
 		
-		<atl.juniosys.blendvpn.view.SummaryEditTextPreference
+		<juniosys.blendvpn.view.SummaryEditTextPreference
             android:key="dnsResolver"
             android:title="@string/title_dns_primary"
             android:summary="@string/summary_dns_primary"
@@ -70,7 +70,7 @@
         	android:title="@string/title_mode_night"
 		/>
 		
-		<atl.juniosys.blendvpn.view.SummaryEditTextPreference
+		<juniosys.blendvpn.view.SummaryEditTextPreference
             android:key="pingerSSH"
             android:title="@string/title_ping_time"
 			android:maxLength="3"
@@ -110,7 +110,7 @@
 	
 	<android.support.v7.preference.Preference
     	android:key="screenAdvancedSettings"
-		app:fragment="atl.juniosys.blendvpn.preference.SettingsAdvancedPreference"
+		app:fragment="juniosys.blendvpn.preference.SettingsAdvancedPreference"
         android:title="@string/category_advanced_settings"
 	/>
 	
