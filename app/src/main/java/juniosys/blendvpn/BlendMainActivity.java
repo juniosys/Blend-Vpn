@@ -167,11 +167,17 @@ public class BlendMainActivity extends BaseActivity
 
 		// Aqui sao os nomes que vcs quiserem pro servidor, pode ser oq vc quiser(nao importa)
 		List<String> ListaServidores = new ArrayList<String>();
-		ListaServidores.add("VIVO 1");
-		ListaServidores.add("VIVO 2 SSLPAY");
-        ListaServidores.add("CLARO 1 SSL");
-		ListaServidores.add("CLARO 2 SSLPAY");
-        ListaServidores.add("CLARO 3 SSLPAY");
+		ListaServidores.add("VIVO EASY 1");
+		ListaServidores.add("VIVO EASY 2");
+        ListaServidores.add("VIVO EASY 3");
+		ListaServidores.add("VIVO EASY 4");
+        ListaServidores.add("TIM SALDO VALIDO 1");
+		ListaServidores.add("TIM SALDO VALIDO 2");
+		ListaServidores.add("TIM SALDO VALIDO 3");
+		ListaServidores.add("TIM SALDO VALIDO 4");
+		ListaServidores.add("TIM SALDO VALIDO 1");
+		ListaServidores.add("TIM SALDO EXPIRADO 1");
+		ListaServidores.add("OI");
         
 		// Criando adaptador para receber os servidores
 		ArrayAdapter<String> AdptadorServidores = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, ListaServidores);
@@ -208,7 +214,7 @@ public class BlendMainActivity extends BaseActivity
 						sPrefs.edit().putString(Settings.SERVIDOR_PORTA_KEY, "80").apply();
 
 						//Payload
-						sPrefs.edit().putString(Settings.CUSTOM_PAYLOAD_KEY, "GET / HTTP/1.1[crlf]Host: br.mixvpn.tk[crlf]Upgrade: Websocket[crlf]Connection: Keep-Alive[crlf][crlf]").apply();
+						sPrefs.edit().putString(Settings.CUSTOM_PAYLOAD_KEY, "GET / HTTP/1.1[crlf]Host: juniosys.tk[crlf]Upgrade: Websocket[crlf]Connection: Keep-Alive[crlf][crlf]").apply();
 
 						//Servidor 01 Modo proxy (exemplo)
 						sPrefs.edit().putInt(Settings.TUNNELTYPE_KEY, Settings.bTUNNEL_TYPE_SSH_DIRECT).apply();
@@ -219,47 +225,108 @@ public class BlendMainActivity extends BaseActivity
                         ////==========================================================================================////
 					}else if(position == 1){
 						//Informações SSH   SERVIDOR 2
-						sPrefs.edit().putString(Settings.SERVIDOR_KEY, "snow.vivo.com.br").apply();
-						sPrefs.edit().putString(Settings.SERVIDOR_PORTA_KEY, "443").apply();
+						sPrefs.edit().putString(Settings.SERVIDOR_KEY, "104.18.7.80").apply();
+						sPrefs.edit().putString(Settings.SERVIDOR_PORTA_KEY, "80").apply();
 
 						//Payload
-						sPrefs.edit().putString(Settings.CUSTOM_PAYLOAD_KEY, "GET wss://snow.vivo.com.br/ HTTP/1.1[crlf]Host: br.mixvpn.tk[crlf]Upgrade: Websocket[crlf]Connection: Keep-Alive[crlf][crlf]").apply();
-                        sPrefs.edit().putString(Settings.CUSTOM_SNI, "snow.vivo.com.br").apply();
+						sPrefs.edit().putString(Settings.CUSTOM_PAYLOAD_KEY, "GET / HTTP/1.1[crlf]Host: juniosys.tk[crlf]Upgrade: Websocket[crlf]Connection: Keep-Alive[crlf][crlf]").apply();
+                        //sPrefs.edit().putString(Settings.CUSTOM_SNI, "snow.vivo.com.br").apply();
 
 						//Servidor 02 Modo direct (exemplo)
-						sPrefs.edit().putInt(Settings.TUNNELTYPE_KEY, Settings.bTUNNEL_TYPE_SSH_SSL_PAY).apply();
+						sPrefs.edit().putInt(Settings.TUNNELTYPE_KEY, Settings.bTUNNEL_TYPE_SSH_DIRECT).apply();
                         ////==========================================================================================////
                     }else if(position == 2){
-                        //Informações SSH   SERVIDOR 2
-                        sPrefs.edit().putString(Settings.SERVIDOR_KEY, "ssl-nl.serverip.co").apply();
-                        sPrefs.edit().putString(Settings.SERVIDOR_PORTA_KEY, "443").apply();
+                        //Informações SSH   SERVIDOR 3
+                        sPrefs.edit().putString(Settings.SERVIDOR_KEY, "104.18.43.147").apply();
+                        sPrefs.edit().putString(Settings.SERVIDOR_PORTA_KEY, "80").apply();
 
                         //Payload
-                        sPrefs.edit().putString(Settings.CUSTOM_SNI, "media.whatsapp.net").apply();
+                        sPrefs.edit().putString(Settings.CUSTOM_PAYLOAD_KEY, "GET / HTTP/1.1[crlf]Host: juniosys.tk[crlf]Upgrade: Websocket[crlf]Connection: Keep-Alive[crlf][crlf]").apply();
+                        //sPrefs.edit().putString(Settings.CUSTOM_SNI, "SNI").apply();
 
                         //Servidor 02 Modo direct (exemplo)
-                        sPrefs.edit().putInt(Settings.TUNNELTYPE_KEY, Settings.bTUNNEL_TYPE_SSH_SSL).apply();
+                        sPrefs.edit().putInt(Settings.TUNNELTYPE_KEY, Settings.bTUNNEL_TYPE_SSH_DIRECT).apply();
 						////==========================================================================================////
                     }else if(position == 3){
-                        //Informações SSH   SERVIDOR 2
-                        sPrefs.edit().putString(Settings.SERVIDOR_KEY, "cdn.jsdelivr.net").apply();
+                        //Informações SSH   SERVIDOR 4
+                        sPrefs.edit().putString(Settings.SERVIDOR_KEY, "172.64.144.109").apply();
+                        sPrefs.edit().putString(Settings.SERVIDOR_PORTA_KEY, "80").apply();
+
+                        //Payload
+                        sPrefs.edit().putString(Settings.CUSTOM_PAYLOAD_KEY, "GET / HTTP/1.1[crlf]Host: juniosys.tk[crlf]Upgrade: Websocket[crlf]Connection: Keep-Alive[crlf][crlf]").apply();
+                        //sPrefs.edit().putString(Settings.CUSTOM_SNI, "SNI").apply();
+
+                        //Servidor 02 Modo direct (exemplo)
+                        sPrefs.edit().putInt(Settings.TUNNELTYPE_KEY, Settings.bTUNNEL_TYPE_SSH_DIRECT).apply();
+                        ////==========================================================================================////
+                    }else if(position == 4){
+                        //Informações SSH   SERVIDOR 5
+                        sPrefs.edit().putString(Settings.SERVIDOR_KEY, "support.deezer.com").apply();
                         sPrefs.edit().putString(Settings.SERVIDOR_PORTA_KEY, "443").apply();
 
                         //Payload
-                        sPrefs.edit().putString(Settings.CUSTOM_PAYLOAD_KEY, "GET wss://cdn.jsdelivr.net/ HTTP/1.1[crlf]Host: br.mixvpn.tk[crlf]Upgrade: Websocket[crlf]Connection: Keep-Alive[crlf][crlf]").apply();
-                        sPrefs.edit().putString(Settings.CUSTOM_SNI, "cdn.jsdelivr.net").apply();
+                        sPrefs.edit().putString(Settings.CUSTOM_PAYLOAD_KEY, "GET wss://[host]/ HTTP/1.1[crlf]Host: juniosys.tk[crlf]Upgrade: Websocket[crlf]Connection: Keep-Alive[crlf][crlf]").apply();
+                        sPrefs.edit().putString(Settings.CUSTOM_SNI, "support.deezer.com").apply();
 
                         //Servidor 02 Modo direct (exemplo)
                         sPrefs.edit().putInt(Settings.TUNNELTYPE_KEY, Settings.bTUNNEL_TYPE_SSH_SSL_PAY).apply();
                         ////==========================================================================================////
-                    }else if(position == 4){
-                        //Informações SSH   SERVIDOR 2
-                        sPrefs.edit().putString(Settings.SERVIDOR_KEY, "4.icanhazip.com").apply();
+                    }else if(position == 5){
+                        //Informações SSH   SERVIDOR 6
+                        sPrefs.edit().putString(Settings.SERVIDOR_KEY, "mobile.c6bank.app").apply();
                         sPrefs.edit().putString(Settings.SERVIDOR_PORTA_KEY, "443").apply();
 
                         //Payload
-                        sPrefs.edit().putString(Settings.CUSTOM_PAYLOAD_KEY, "GET wss://4.icanhazip.com/ HTTP/1.1[crlf]Host: br.mixvpn.tk[crlf]Upgrade: Websocket[crlf]Connection: Keep-Alive[crlf][crlf]").apply();
-                        sPrefs.edit().putString(Settings.CUSTOM_SNI, "4.icanhazip.com").apply();
+                        sPrefs.edit().putString(Settings.CUSTOM_PAYLOAD_KEY, "GET wss://[host]/ HTTP/1.1[crlf]Host: juniosys.tk[crlf]Upgrade: Websocket[crlf]Connection: Keep-Alive[crlf][crlf]").apply();
+                        sPrefs.edit().putString(Settings.CUSTOM_SNI, "mobile.c6bank.app").apply();
+
+                        //Servidor 02 Modo direct (exemplo)
+                        sPrefs.edit().putInt(Settings.TUNNELTYPE_KEY, Settings.bTUNNEL_TYPE_SSH_SSL_PAY).apply();
+                        ////==========================================================================================////
+					}else if(position == 6){
+                        //Informações SSH   SERVIDOR 7
+                        sPrefs.edit().putString(Settings.SERVIDOR_KEY, "api.onesignal.com").apply();
+                        sPrefs.edit().putString(Settings.SERVIDOR_PORTA_KEY, "443").apply();
+
+                        //Payload
+                        sPrefs.edit().putString(Settings.CUSTOM_PAYLOAD_KEY, "GET wss://[host]/ HTTP/1.1[crlf]Host: juniosys.tk[crlf]Upgrade: Websocket[crlf]Connection: Keep-Alive[crlf][crlf]").apply();
+                        sPrefs.edit().putString(Settings.CUSTOM_SNI, "api.onesignal.com").apply();
+
+                        //Servidor 02 Modo direct (exemplo)
+                        sPrefs.edit().putInt(Settings.TUNNELTYPE_KEY, Settings.bTUNNEL_TYPE_SSH_SSL_PAY).apply();
+                        ////==========================================================================================////
+					}else if(position == 7){
+                        //Informações SSH   SERVIDOR 8
+                        sPrefs.edit().putString(Settings.SERVIDOR_KEY, "workplaceservices.surveymonkey.com").apply();
+                        sPrefs.edit().putString(Settings.SERVIDOR_PORTA_KEY, "443").apply();
+
+                        //Payload
+                        sPrefs.edit().putString(Settings.CUSTOM_PAYLOAD_KEY, "GET wss://[host]/ HTTP/1.1[crlf]Host: juniosys.tk[crlf]Upgrade: Websocket[crlf]Connection: Keep-Alive[crlf][crlf]").apply();
+                        sPrefs.edit().putString(Settings.CUSTOM_SNI, "workplaceservices.surveymonkey.com").apply();
+
+                        //Servidor 02 Modo direct (exemplo)
+                        sPrefs.edit().putInt(Settings.TUNNELTYPE_KEY, Settings.bTUNNEL_TYPE_SSH_SSL_PAY).apply();
+                        ////==========================================================================================////
+					}else if(position == 8){
+                        //Informações SSH   SERVIDOR 9
+                        sPrefs.edit().putString(Settings.SERVIDOR_KEY, "duvidas.ampli.com.br").apply();
+                        sPrefs.edit().putString(Settings.SERVIDOR_PORTA_KEY, "443").apply();
+
+                        //Payload
+                        sPrefs.edit().putString(Settings.CUSTOM_PAYLOAD_KEY, "GET wss://[host]/ HTTP/1.1[crlf]Host: juniosys.tk[crlf]Upgrade: Websocket[crlf]Connection: Keep-Alive[crlf][crlf]").apply();
+                        sPrefs.edit().putString(Settings.CUSTOM_SNI, "duvidas.ampli.com.br").apply();
+
+                        //Servidor 02 Modo direct (exemplo)
+                        sPrefs.edit().putInt(Settings.TUNNELTYPE_KEY, Settings.bTUNNEL_TYPE_SSH_SSL_PAY).apply();
+                        ////==========================================================================================////
+					}else if(position == 9){
+                        //Informações SSH   SERVIDOR 10
+                        sPrefs.edit().putString(Settings.SERVIDOR_KEY, "www.hbogo.com.br").apply();
+                        sPrefs.edit().putString(Settings.SERVIDOR_PORTA_KEY, "443").apply();
+
+                        //Payload
+                        sPrefs.edit().putString(Settings.CUSTOM_PAYLOAD_KEY, "GET wss://[host]/ HTTP/1.1[crlf]Host: juniosys.tk[crlf]Upgrade: Websocket[crlf]Connection: Keep-Alive[crlf][crlf]").apply();
+                        sPrefs.edit().putString(Settings.CUSTOM_SNI, "www.hbogo.com.br").apply();
 
                         //Servidor 02 Modo direct (exemplo)
                         sPrefs.edit().putInt(Settings.TUNNELTYPE_KEY, Settings.bTUNNEL_TYPE_SSH_SSL_PAY).apply();
