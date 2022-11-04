@@ -71,7 +71,7 @@
 		/>
 		
 		<juniosys.blendvpn.view.SummaryEditTextPreference
-            android:key="pingerSSH"
+            android:key="pingTimeSSH"
             android:title="@string/title_ping_time"
 			android:maxLength="3"
             android:summary="@string/no_value"

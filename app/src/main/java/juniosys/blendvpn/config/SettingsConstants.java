@@ -39,7 +39,7 @@ public interface SettingsConstants {
 	SENHA_KEY = "sshPass",
 	KEYPATH_KEY = "keyPath",
 	PORTA_LOCAL_KEY = "sshPortaLocal",
-	PINGER_KEY = "pingerSSH",
+	PING_TIME_KEY = "pingTimeSSH",
 
 	// Tunnel Type
     TUNNELTYPE_KEY = "tunnelType",

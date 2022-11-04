@@ -36,7 +36,7 @@ public class SettingsPreference extends PreferenceFragmentCompat
 		DNSRESOLVER_KEY,
 		UDPFORWARD_KEY,
 		UDPRESOLVER_KEY,
-		PINGER_KEY,
+		PING_TIME_KEY,
 		AUTO_CLEAR_LOGS_KEY,
 		HIDE_LOG_KEY,
 		COMPRESSION_SSH_KEY,

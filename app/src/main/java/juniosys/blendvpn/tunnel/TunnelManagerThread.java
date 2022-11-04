@@ -263,8 +263,8 @@ public class TunnelManagerThread
 			BlendStatus.updateStateString(BlendStatus.SSH_CONECTADO, "Conexão SSH estabelecida");
 			BlendStatus.logInfo("<strong>" + mContext.getString(R.string.state_connected) + "</strong>");
 			
-			if (mConfig.getSSHPinger() > 0) {
-				startPinger(mConfig.getSSHPinger());
+			if (mConfig.getSSHPingTime() > 0) {
+				startPinger(mConfig.getSSHPingTime());
 			}
 			
 			startForwarder(portaLocal);

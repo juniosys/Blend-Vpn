@@ -183,8 +183,8 @@ public class Settings implements SettingsConstants
 		return mPrefs.getString(KEYPATH_KEY, "");
 	}
 
-	public int getSSHPinger() {
-		String ping = mPrefs.getString(PINGER_KEY, "3");
+	public int getSSHPingTime() {
+		String ping = mPrefs.getString(PING_TIME_KEY, "3");
 		if (ping == null || ping.isEmpty()) {
 			ping = "3";
 		}
@@ -206,7 +206,7 @@ public class Settings implements SettingsConstants
 		editor.putString(DNSRESOLVER_KEY, "1.1.1.1");
 		editor.putBoolean(COMPRESSION_SSH_KEY, true);
 		editor.putString(MODO_NOTURNO_KEY, "off");
-		editor.putString(PINGER_KEY, "3");
+		editor.putString(PING_TIME_KEY, "3");
 		editor.putString(MAXIMO_THREADS_KEY, "8th");
 		editor.remove(MODO_DEBUG_KEY);
 		editor.remove(HIDE_LOG_KEY);
